@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,6 +14,9 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
+    "bootstrap": "^5.2.1",
+    "qr-scanner": "^1.4.1",
+    "svelte-navigator": "^3.2.2",
     "sveltestrap": "^5.9.0"
   }
 }

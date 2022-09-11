@@ -1,14 +1,20 @@
+<!-- App.svelte -->
 <script>
-  import {Card,CardBody,Jumbotron} from "sveltestrap";
+	import { Router, Link, Route } from "svelte-navigator";
+	import Login from "./routes/Login.svelte";
+	import Home from "./routes/Home.svelte";
+	import PrivateRoute from "./routes/PrivateRoute.svelte";
+
 </script>
 
-<main class="d-flex align-items-center justify-content-center">
-  <Card>
-    <CardBody>
-      
-    </CardBody>
-  </Card>
-</main>
+<Router>
+	<div>
+		<Route path="login">
+			<Login />
+		</Route>
 
-<style>
-</style>
+		<PrivateRoute path="/">
+			<Home />
+		</PrivateRoute>
+	</div>
+</Router>

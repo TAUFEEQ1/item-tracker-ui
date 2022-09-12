@@ -1,3 +1,10 @@
+/**
+ * @typedef LoginResponse
+ * @property {string} access_token
+ * @property {string} first_name
+ * @property {string} last_name
+ * @property {string} username 
+ */
 export default async (/** @type {string | Blob} */ username,/** @type {string | Blob} */ passkey)=>{
     const data = new FormData();
     data.set('username',username);
@@ -6,6 +13,7 @@ export default async (/** @type {string | Blob} */ username,/** @type {string | 
         method:"post",
         body:data
     });
-    const apiKey = await res.text();
-    return apiKey;
+    /** @type {LoginResponse} */
+    const result = await res.json()
+    return result;
 }

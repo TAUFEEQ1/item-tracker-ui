@@ -9,6 +9,7 @@ export default (
 ) => {
   /**
  * @param {string | Blob} qcode
+ * Sends code to server for verification.
  */
   async function validateCode(qcode) {
     let form = new FormData();
